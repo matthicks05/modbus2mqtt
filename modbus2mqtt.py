@@ -83,8 +83,9 @@ class Register:
     def poll(self):
         try:
             res=master.execute(self.slaveid,self.functioncode,self.register,self.size,data_format=self.format[0])
+
             r=res[0]
-            if self.format[1]:
+            if len(self.format) > 1:
                 r=self.format[1] % r
             if r!=self.lastval or (args.force and (time.time() - self.last) > int(args.force)):
                 self.lastval=r
