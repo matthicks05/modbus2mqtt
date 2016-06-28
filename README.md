@@ -114,6 +114,16 @@ modbus2mqtt subscibes to two topics:
 
 There is only limited sanity checking currently on the payload values.
 
+SunSpec
+-------
+
+Example command for using the sunspec definitions with the sunspec-sim [sunspec-sim](https://github.com/emdem/sunspec-sim)
+
+Replace /dev/tnt1 with the correct serial port.
+
+```
+sudo python modbus2mqtt.py --registers sunspec_register_definition.csv --rtu /dev/tnt1 --rtu-baud 9600 --rtu-parity none --log DEBUG
+```
 
 Changelog
 ---------
