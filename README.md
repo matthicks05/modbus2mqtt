@@ -125,6 +125,12 @@ Replace /dev/tnt1 with the correct serial port.
 sudo python modbus2mqtt.py --registers sunspec_register_definition.csv --rtu /dev/tnt1 --rtu-baud 9600 --rtu-parity none --log DEBUG
 ```
 
+Subscribe to MQTT sunspec topic (assuming you've installed mosquitto):
+
+```
+mosquitto_sub -v -t modbus/status/sunspec/#
+```
+
 Changelog
 ---------
 * 0.4 - 2015/07/31 - nzfarmer
